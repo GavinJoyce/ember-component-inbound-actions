@@ -1,25 +1,44 @@
-# Ember-component-inbound-actions
+# ember-component-inbound-actions
 
-This README outlines the details of collaborating on this Ember addon.
+Send actions to Ember.js components. Inspired by [Sam Selikoff's blog post](http://www.samselikoff.com/blog/2014/05/16/getting-ember-components-to-respond-to-actions/)
 
-## Installation
+## Usage Instructions
+
+Add the `InboundActions` mixin to your component:
+
+```javascript
+import Em from 'ember';
+import InboundActions from 'ember-component-inbound-actions/inbound-actions';
+
+export default Em.Component.extend(InboundActions, {
+  name: 'Larry David',
+  actions: {
+    reset: function() {
+      this.set('name', '');
+    }
+  }
+});
+```
+
+When declaring your component in a template, include an `actionReceiver` attribute:
+
+```handlebars
+{{name-form actionReceiver=nameForm}}
+```
+
+This allows you to reference the `nameForm` in your controller and invoke actions on it:
+
+```javascript
+this.get('nameForm').send('reset');
+```
+
+## Development Instructions
 
 * `git clone` this repository
 * `npm install`
 * `bower install`
 
-## Running
+### Running
 
 * `ember server`
 * Visit your app at http://localhost:4200.
-
-## Running Tests
-
-* `ember test`
-* `ember test --server`
-
-## Building
-
-* `ember build`
-
-For more information on using ember-cli, visit [http://www.ember-cli.com/](http://www.ember-cli.com/).
