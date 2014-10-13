@@ -6,6 +6,8 @@ Questions? Ping me [@gavinjoyce](https://twitter.com/gavinjoyce)
 
 ## Installation
 
+This is an Ember CLI addon, so all you need to do is
+
 `npm install ember-component-inbound-actions --save-dev`
 
 ## Usage Instructions
