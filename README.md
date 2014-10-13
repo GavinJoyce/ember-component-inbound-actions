@@ -4,6 +4,10 @@ Send actions to Ember.js components. Inspired by [Sam Selikoff's blog post](http
 
 Questions? Ping me [@gavinjoyce](https://twitter.com/gavinjoyce)
 
+## Installation
+
+`npm install ember-component-inbound-actions --save-dev`
+
 ## Usage Instructions
 
 Add the `InboundActions` mixin to your component:
