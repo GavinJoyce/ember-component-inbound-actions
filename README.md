@@ -2,6 +2,8 @@
 
 Send actions to Ember.js components. Inspired by [Sam Selikoff's blog post](http://www.samselikoff.com/blog/2014/05/16/getting-ember-components-to-respond-to-actions/)
 
+Questions? Ping me [@gavinjoyce](https://twitter.com/gavinjoyce)
+
 ## Usage Instructions
 
 Add the `InboundActions` mixin to your component:
