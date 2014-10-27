@@ -1,6 +1,7 @@
 {
   "name": "ember-component-inbound-actions",
   "version": "0.0.1",
+  "description": "Send actions to Ember.js components",
   "directories": {
     "doc": "doc",
     "test": "tests"
