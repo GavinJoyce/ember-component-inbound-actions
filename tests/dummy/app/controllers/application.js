@@ -1,7 +1,6 @@
 import Em from 'ember';
 
 export default Em.Controller.extend({
-
   actions: {
     reset: function() {
       //send a `reset` action to both components
