@@ -16,5 +16,8 @@ export default Em.Mixin.create({
     } else {
       fn();
     }
-  }
+  },
+  onDestroy: Em.on('willDestroyElement', function() {
+    this.set('actionReceiver', null);
+  })
 });
