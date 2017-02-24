@@ -1,2 +1,5 @@
 <label>Name:</label><br />
 {{input value=name placeholder='Enter your name' class='name'}}
+{{#if shouldShowParams}}
+  Params sent: <span id="params">{{params}}</span>
+{{/if}}

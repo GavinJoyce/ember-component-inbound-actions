@@ -3,4 +3,7 @@
 {{name-form actionReceiver=nameForm}}
 {{address-form actionReceiver=addressForm}}
 
-<button {{action 'reset'}}>Reset</button>
+<button id="controller" {{action 'reset'}}>Reset</button>
+<button id="send" {{action (send nameForm "reset" "param1" "param2")}}>
+  Reset name only (using send)
+</button>

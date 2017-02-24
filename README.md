@@ -42,6 +42,14 @@ This allows you to reference the `nameForm` in your controller and invoke action
 this.get('nameForm').send('reset');
 ```
 
+Or use the send helper to invoke actions on your component reference from within the template:
+
+```hbs
+{{name-form actionReceiver=nameForm}}
+
+<button {{action (send nameForm "reset")}}>Reset</button>
+```
+
 ## Development Instructions
 
 * `git clone` this repository

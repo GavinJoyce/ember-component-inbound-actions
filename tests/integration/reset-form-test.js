@@ -13,11 +13,27 @@ test('the component are reset', function(assert) {
     assert.equal(name, 'Larry David');
     assert.equal(address, '1 The Blade, Mudpark, Gallinteer, Bublin 16');
   });
-  click('button');
+  click('#controller');
   andThen(function() {
     let name = findWithAssert('input.name').val();
     let address = findWithAssert('textarea.address').val();
     assert.equal(name, '', 'The name should have been reset');
     assert.equal(address, '', 'The address should have been reset');
+  });
+});
+
+test('the send helper sends action with params', function(assert) {
+  assert.expect(2);
+
+  visit('/');
+
+  click('#send');
+
+  andThen(function() {
+    let name = findWithAssert('input.name').val();
+    assert.equal(name, '', 'The name should have been reset');
+
+    let params = findWithAssert('#params').text();
+    assert.equal(params, 'param1, param2', 'The action is sent params');
   });
 });
