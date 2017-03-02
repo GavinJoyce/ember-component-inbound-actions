@@ -7,7 +7,7 @@ const Router = Ember.Router.extend({
 });
 
 Router.map(function() {
-  this.route('another');
+  this.route('siblings');
 });
 
 export default Router;

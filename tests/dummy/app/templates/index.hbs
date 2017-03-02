@@ -1,9 +1,9 @@
 <h2 id='title'>ember-component-inbound-actions</h2>
 
-{{name-form actionReceiver=nameForm}}
+{{name-form}}
 {{address-form actionReceiver=addressForm}}
 
-<button id="controller" {{action 'reset'}}>Reset</button>
-<button id="send" {{action (send nameForm "reset" "param1" "param2")}}>
-  Reset name only (using send)
+<button id="reset-from-action" {{action 'reset'}}>Reset</button>
+<button id="send-from-template" {{action (send addressForm "reset" "param1" "param2")}}>
+  Reset address (using `send` helper)
 </button>

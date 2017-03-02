@@ -13,7 +13,7 @@ test('the component are reset', function(assert) {
     assert.equal(name, 'Larry David');
     assert.equal(address, '1 The Blade, Mudpark, Gallinteer, Bublin 16');
   });
-  click('#controller');
+  click('#reset-from-action');
   andThen(function() {
     let name = findWithAssert('input.name').val();
     let address = findWithAssert('textarea.address').val();
@@ -27,13 +27,13 @@ test('the send helper sends action with params', function(assert) {
 
   visit('/');
 
-  click('#send');
+  click('#send-from-template');
 
   andThen(function() {
-    let name = findWithAssert('input.name').val();
-    assert.equal(name, '', 'The name should have been reset');
+    let name = findWithAssert('textarea.address').val();
+    assert.equal(name, '', 'The address should have been reset');
 
-    let params = findWithAssert('#params').text();
+    let params = findWithAssert('#address-params').text();
     assert.equal(params, 'param1, param2', 'The action is sent params');
   });
 });
