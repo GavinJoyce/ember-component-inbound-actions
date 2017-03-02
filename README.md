@@ -1,5 +1,8 @@
 # ember-component-inbound-actions
 
+[![npm version](https://badge.fury.io/js/ember-component-inbound-actions.svg)](https://badge.fury.io/js/ember-component-inbound-actions)
+[![Build Status](https://travis-ci.org/GavinJoyce/ember-component-inbound-actions.svg?branch=master)](https://travis-ci.org/GavinJoyce/ember-component-inbound-actions)
+
 Send actions to Ember.js components. Inspired by [Sam Selikoff's blog post](http://www.samselikoff.com/blog/2014/05/16/getting-ember-components-to-respond-to-actions/)
 
 Questions? Ping me [@gavinjoyce](https://twitter.com/gavinjoyce)
