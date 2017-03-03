@@ -1,0 +1,13 @@
+<h1>Sibling Component Communication</h1>
+
+<p>NOTE: This is currently an experimental approach</p>
+
+{{random-color-component
+  actionReceiverName='left'
+  onClick=(action 'changeRightBackground')
+}}
+
+{{random-color-component
+  actionReceiverName='right'
+  onClick=(action 'changeLeftBackground')
+}}

@@ -1,2 +1,5 @@
 <label>Address:</label><br />
 {{textarea value=address cols='80' rows='6' placeholder='Enter your address' class='address'}}
+{{#if shouldShowParams}}
+  Params sent: <span id="address-params">{{params}}</span>
+{{/if}}

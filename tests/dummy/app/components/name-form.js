@@ -1,7 +1,7 @@
 import Em from 'ember';
-import InboundActions from 'ember-component-inbound-actions/inbound-actions';
+import Receiver from 'ember-component-inbound-actions/receiver';
 
-export default Em.Component.extend(InboundActions, {
+export default Em.Component.extend(Receiver, {
   name: 'Larry David',
   actions: {
     reset: function(...params) {
@@ -12,5 +12,11 @@ export default Em.Component.extend(InboundActions, {
         this.set('params', params.join(', '));
       }
     }
+  },
+
+  didRender() {
+    this._super(...arguments);
+
+    console.log('GJ: didRender name (😄 no initial double render)');
   }
 });
