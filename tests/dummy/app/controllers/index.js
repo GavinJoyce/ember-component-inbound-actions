@@ -1,6 +1,6 @@
-import Em from 'ember';
+import Controller from '@ember/controller';
 
-export default Em.Controller.extend({
+export default Controller.extend({
   actions: {
     reset: function() {
       //send a `reset` action to both components
