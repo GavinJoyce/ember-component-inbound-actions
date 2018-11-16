@@ -1,7 +1,7 @@
-import Em from 'ember';
+import Component from '@ember/component';
 import InboundActions from 'ember-component-inbound-actions/inbound-actions';
 
-export default Em.Component.extend(InboundActions, {
+export default Component.extend(InboundActions, {
   address: '1 The Blade, Mudpark, Gallinteer, Bublin 16',
   actions: {
     reset: function() {
