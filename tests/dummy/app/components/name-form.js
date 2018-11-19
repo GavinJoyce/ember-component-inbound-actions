@@ -1,7 +1,7 @@
-import Em from 'ember';
+import Component from '@ember/component';
 import InboundActions from 'ember-component-inbound-actions/inbound-actions';
 
-export default Em.Component.extend(InboundActions, {
+export default Component.extend(InboundActions, {
   name: 'Larry David',
   actions: {
     reset: function(...params) {

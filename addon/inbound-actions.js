@@ -1,10 +1,13 @@
-import Em from 'ember';
+import { schedule } from '@ember/runloop';
+import { on } from '@ember/object/evented';
+import Mixin from '@ember/object/mixin';
+import { VERSION } from '@ember/version';
 import ActionProxy from './action-proxy';
 
-let scheduleInAfterRender = /^1\.13|^[2-9]/.test(Em.VERSION);
+let scheduleInAfterRender = /^1\.13|^[2-9]/.test(VERSION);
 
-export default Em.Mixin.create({
-  _inbound_actions_setup: Em.on('init', function() {
+export default Mixin.create({
+  _inbound_actions_setup: on('init', function() {
     this._inbound_actions_maybeScheduleInAfterRender(() => {
       var proxy = ActionProxy.create({ target: this });
       this.set('actionReceiver', proxy);
@@ -12,12 +15,12 @@ export default Em.Mixin.create({
   }),
   _inbound_actions_maybeScheduleInAfterRender: function(fn) {
     if (scheduleInAfterRender) {
-      Em.run.schedule('afterRender', this, fn);
+      schedule('afterRender', this, fn);
     } else {
       fn();
     }
   },
-  onDestroy: Em.on('willDestroyElement', function() {
+  onDestroy: on('willDestroyElement', function() {
     this.set('actionReceiver', null);
   })
 });
