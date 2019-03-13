@@ -1,0 +1,11 @@
+{{yield nameForm addressForm}}
+
+<h3 id='title'>wrapping component</h3>
+
+{{name-form actionReceiver=nameForm}}
+{{address-form actionReceiver=addressForm}}
+
+<button id="controller" {{action 'reset'}}>Reset</button>
+<button id="send" {{action (send nameForm "reset" "param1" "param2")}}>
+  Reset name only (using send)
+</button>

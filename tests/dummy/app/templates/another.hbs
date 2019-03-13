@@ -1,1 +1,10 @@
 just an empty page
+
+
+{{#wrapping-component as |nameForm addressForm|}}
+  <h1>Hello</h1>
+
+  <button id="send" {{action (send nameForm "reset" "param1" "param2")}}>
+    Reset name only (using send)
+  </button>
+{{/wrapping-component}}
